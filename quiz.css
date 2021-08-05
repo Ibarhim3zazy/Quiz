@@ -155,16 +155,22 @@ body{
   display: none;
   transition: .5s;
 }
-@media screen and (max-width:790px)  {
+@media screen and (min-width:790px)  {
   .timer{
     margin-left: 50%;
     transform: translateX(-50%);
     position: fixed;
-    top: 120px;
+    top: 130px;
     right:auto;
   }
   .dir{
-    position: fixed;
-    bottom: 15px;
+    position: relative;
+    top: 400px;
+    bottom: auto;
+  }
+  #correctA{
+    position: relative;
+    top: 400px;
+    bottom: auto;
   }
 }
