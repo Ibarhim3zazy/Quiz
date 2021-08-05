@@ -10,6 +10,7 @@ function start_qiuz(){
   document.getElementById('timer').innerHTML = Math.floor(left_time_min) +" : "+ left_time_sec;
   document.getElementById('start').style.transform = "translateY(-100%)";
   document.getElementById('take_quiz').style.display = "block";
+  document.getElementById('correctA').style.display = "none";
       if(left_time_sec==0)
 				{
           left_time_sec = 60;
@@ -84,6 +85,7 @@ function result(){
   document.getElementById('Finish').style.display = "block";
   document.getElementById('start').style.transform = "translateY(0%)";
   document.getElementById('take_quiz').style.display = "none";
+  document.getElementById('correctA').style.display = "block";
   $(document).ready(function(){
     $('.correctA').each(function() {
 
