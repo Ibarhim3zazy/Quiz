@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="quiz.css">
+    <script type="text/javascript" src="quiz.js"></script>
+    <script src="jquery-3.5.1.js"></script>
+  </head>
+  <body>
+    <div id="start">
+      <input id="start-b" type="button" onclick="start_qiuz()" value="Start Quiz">
+      <div id="Finish">
+        <h1>Result</h1>
+        <h3><span id="deg"></span> / <span>20</span></h3>
+        <input id="review" type="button" onclick="review()" value="review Quiz">
+      </div>
+    </div>
+    <div id="take_quiz">
+    <center><h1>Quiz</h1></center>
+    <center><h3>Question <span id="current_q">1</span> of 20</h3></center>
+    <div class="timer">
+      <b>time left <b id="timer"></b></b>
+    </div>
+    <div id="stop_quiz">
+    <div id="q1" class="slide">
+      <h3>A sample question....1?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a1" onclick="ans_a(this.id)"><input id="radio_a1" type="radio" name="Answer1"> Answer 1</h4>
+        <h4 class="incorrectA" id="b1" onclick="ans_b(this.id)"><input id="radio_b1" type="radio" name="Answer1"> Answer 2</h4>
+        <h4 class="incorrectA" id="c1" onclick="ans_c(this.id)"><input id="radio_c1" type="radio" name="Answer1"> Answer 3</h4>
+        <h4 class="incorrectA" id="d1" onclick="ans_d(this.id)"><input id="radio_d1" type="radio" name="Answer1"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q2" class="slide">
+      <h3>A sample question....2?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a2" onclick="ans_a(this.id)"><input id="radio_a2" type="radio" name="Answer2"> Answer 1</h4>
+        <h4 class="incorrectA" id="b2" onclick="ans_b(this.id)"><input id="radio_b2" type="radio" name="Answer2"> Answer 2</h4>
+        <h4 class="incorrectA" id="c2" onclick="ans_c(this.id)"><input id="radio_c2" type="radio" name="Answer2"> Answer 3</h4>
+        <h4 class="incorrectA" id="d2" onclick="ans_d(this.id)"><input id="radio_d2" type="radio" name="Answer2"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q3" class="slide">
+      <h3>A sample question....3?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a3" onclick="ans_a(this.id)"><input id="radio_a3" type="radio" name="Answer3"> Answer 1</h4>
+        <h4 class="incorrectA" id="b3" onclick="ans_b(this.id)"><input id="radio_b3" type="radio" name="Answer3"> Answer 2</h4>
+        <h4 class="incorrectA" id="c3" onclick="ans_c(this.id)"><input id="radio_c3" type="radio" name="Answer3"> Answer 3</h4>
+        <h4 class="incorrectA" id="d3" onclick="ans_d(this.id)"><input id="radio_d3" type="radio" name="Answer3"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q4" class="slide">
+      <h3>A sample question....4?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a4" onclick="ans_a(this.id)"><input id="radio_a4" type="radio" name="Answer4"> Answer 1</h4>
+        <h4 class="incorrectA" id="b4" onclick="ans_b(this.id)"><input id="radio_b4" type="radio" name="Answer4"> Answer 2</h4>
+        <h4 class="incorrectA" id="c4" onclick="ans_c(this.id)"><input id="radio_c4" type="radio" name="Answer4"> Answer 3</h4>
+        <h4 class="incorrectA" id="d4" onclick="ans_d(this.id)"><input id="radio_d4" type="radio" name="Answer4"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q5" class="slide">
+      <h3>A sample question....5?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a5" onclick="ans_a(this.id)"><input id="radio_a5" type="radio" name="Answer5"> Answer 1</h4>
+        <h4 class="incorrectA" id="b5" onclick="ans_b(this.id)"><input id="radio_b5" type="radio" name="Answer5"> Answer 2</h4>
+        <h4 class="incorrectA" id="c5" onclick="ans_c(this.id)"><input id="radio_c5" type="radio" name="Answer5"> Answer 3</h4>
+        <h4 class="incorrectA" id="d5" onclick="ans_d(this.id)"><input id="radio_d5" type="radio" name="Answer5"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q6" class="slide">
+      <h3>A sample question....6?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a6" onclick="ans_a(this.id)"><input id="radio_a6" type="radio" name="Answer6"> Answer 1</h4>
+        <h4 class="incorrectA" id="b6" onclick="ans_b(this.id)"><input id="radio_b6" type="radio" name="Answer6"> Answer 2</h4>
+        <h4 class="incorrectA" id="c6" onclick="ans_c(this.id)"><input id="radio_c6" type="radio" name="Answer6"> Answer 3</h4>
+        <h4 class="incorrectA" id="d6" onclick="ans_d(this.id)"><input id="radio_d6" type="radio" name="Answer6"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q7" class="slide">
+      <h3>A sample question....7?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a7" onclick="ans_a(this.id)"><input id="radio_a7" type="radio" name="Answer7"> Answer 1</h4>
+        <h4 class="incorrectA" id="b7" onclick="ans_b(this.id)"><input id="radio_b7" type="radio" name="Answer7"> Answer 2</h4>
+        <h4 class="incorrectA" id="c7" onclick="ans_c(this.id)"><input id="radio_c7" type="radio" name="Answer7"> Answer 3</h4>
+        <h4 class="incorrectA" id="d7" onclick="ans_d(this.id)"><input id="radio_d7" type="radio" name="Answer7"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q8" class="slide">
+      <h3>A sample question....8?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a8" onclick="ans_a(this.id)"><input id="radio_a8" type="radio" name="Answer8"> Answer 1</h4>
+        <h4 class="incorrectA" id="b8" onclick="ans_b(this.id)"><input id="radio_b8" type="radio" name="Answer8"> Answer 2</h4>
+        <h4 class="incorrectA" id="c8" onclick="ans_c(this.id)"><input id="radio_c8" type="radio" name="Answer8"> Answer 3</h4>
+        <h4 class="incorrectA" id="d8" onclick="ans_d(this.id)"><input id="radio_d8" type="radio" name="Answer8"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q9" class="slide">
+      <h3>A sample question....9?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a9" onclick="ans_a(this.id)"><input id="radio_a9" type="radio" name="Answer9"> Answer 1</h4>
+        <h4 class="incorrectA" id="b9" onclick="ans_b(this.id)"><input id="radio_b9" type="radio" name="Answer9"> Answer 2</h4>
+        <h4 class="incorrectA" id="c9" onclick="ans_c(this.id)"><input id="radio_c9" type="radio" name="Answer9"> Answer 3</h4>
+        <h4 class="incorrectA" id="d9" onclick="ans_d(this.id)"><input id="radio_d9" type="radio" name="Answer9"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q10" class="slide">
+      <h3>A sample question....10?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a10" onclick="ans_a(this.id)"><input id="radio_a10" type="radio" name="Answer10"> Answer 1</h4>
+        <h4 class="incorrectA" id="b10" onclick="ans_b(this.id)"><input id="radio_b10" type="radio" name="Answer10"> Answer 2</h4>
+        <h4 class="incorrectA" id="c10" onclick="ans_c(this.id)"><input id="radio_c10" type="radio" name="Answer10"> Answer 3</h4>
+        <h4 class="incorrectA" id="d10" onclick="ans_d(this.id)"><input id="radio_d10" type="radio" name="Answer10"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q11" class="slide">
+      <h3>A sample question....11?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a11" onclick="ans_a(this.id)"><input id="radio_a11" type="radio" name="Answer11"> Answer 1</h4>
+        <h4 class="incorrectA" id="b11" onclick="ans_b(this.id)"><input id="radio_b11" type="radio" name="Answer11"> Answer 2</h4>
+        <h4 class="incorrectA" id="c11" onclick="ans_c(this.id)"><input id="radio_c11" type="radio" name="Answer11"> Answer 3</h4>
+        <h4 class="incorrectA" id="d11" onclick="ans_d(this.id)"><input id="radio_d11" type="radio" name="Answer11"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q12" class="slide">
+      <h3>A sample question....12?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a12" onclick="ans_a(this.id)"><input id="radio_a12" type="radio" name="Answer12"> Answer 1</h4>
+        <h4 class="incorrectA" id="b12" onclick="ans_b(this.id)"><input id="radio_b12" type="radio" name="Answer12"> Answer 2</h4>
+        <h4 class="incorrectA" id="c12" onclick="ans_c(this.id)"><input id="radio_c12" type="radio" name="Answer12"> Answer 3</h4>
+        <h4 class="incorrectA" id="d12" onclick="ans_d(this.id)"><input id="radio_d12" type="radio" name="Answer12"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q13" class="slide">
+      <h3>A sample question....13?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a13" onclick="ans_a(this.id)"><input id="radio_a13" type="radio" name="Answer13"> Answer 1</h4>
+        <h4 class="incorrectA" id="b13" onclick="ans_b(this.id)"><input id="radio_b13" type="radio" name="Answer13"> Answer 2</h4>
+        <h4 class="incorrectA" id="c13" onclick="ans_c(this.id)"><input id="radio_c13" type="radio" name="Answer13"> Answer 3</h4>
+        <h4 class="incorrectA" id="d13" onclick="ans_d(this.id)"><input id="radio_d13" type="radio" name="Answer13"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q14" class="slide">
+      <h3>A sample question....14?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a14" onclick="ans_a(this.id)"><input id="radio_a14" type="radio" name="Answer14"> Answer 1</h4>
+        <h4 class="incorrectA" id="b14" onclick="ans_b(this.id)"><input id="radio_b14" type="radio" name="Answe14r"> Answer 2</h4>
+        <h4 class="incorrectA" id="c14" onclick="ans_c(this.id)"><input id="radio_c14" type="radio" name="Answer14"> Answer 3</h4>
+        <h4 class="incorrectA" id="d14" onclick="ans_d(this.id)"><input id="radio_d14" type="radio" name="Answer14"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q15" class="slide">
+      <h3>A sample question....15?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a15" onclick="ans_a(this.id)"><input id="radio_a15" type="radio" name="Answer15"> Answer 1</h4>
+        <h4 class="incorrectA" id="b15" onclick="ans_b(this.id)"><input id="radio_b15" type="radio" name="Answer15"> Answer 2</h4>
+        <h4 class="incorrectA" id="c15" onclick="ans_c(this.id)"><input id="radio_c15" type="radio" name="Answer15"> Answer 3</h4>
+        <h4 class="incorrectA" id="d15" onclick="ans_d(this.id)"><input id="radio_d15" type="radio" name="Answer15"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q16" class="slide">
+      <h3>A sample question....16?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a16" onclick="ans_a(this.id)"><input id="radio_a16" type="radio" name="Answer16"> Answer 1</h4>
+        <h4 class="incorrectA" id="b16" onclick="ans_b(this.id)"><input id="radio_b16" type="radio" name="Answer16"> Answer 2</h4>
+        <h4 class="incorrectA" id="c16" onclick="ans_c(this.id)"><input id="radio_c16" type="radio" name="Answer16"> Answer 3</h4>
+        <h4 class="incorrectA" id="d16" onclick="ans_d(this.id)"><input id="radio_d16" type="radio" name="Answer16"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q17" class="slide">
+      <h3>A sample question....17?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a17" onclick="ans_a(this.id)"><input id="radio_a17" type="radio" name="Answer17"> Answer 1</h4>
+        <h4 class="incorrectA" id="b17" onclick="ans_b(this.id)"><input id="radio_b17" type="radio" name="Answer17"> Answer 2</h4>
+        <h4 class="incorrectA" id="c17" onclick="ans_c(this.id)"><input id="radio_c17" type="radio" name="Answer17"> Answer 3</h4>
+        <h4 class="incorrectA" id="d17" onclick="ans_d(this.id)"><input id="radio_d17" type="radio" name="Answer17"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q18" class="slide">
+      <h3>A sample question....18?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a18" onclick="ans_a(this.id)"><input id="radio_a18" type="radio" name="Answer18"> Answer 1</h4>
+        <h4 class="incorrectA" id="b18" onclick="ans_b(this.id)"><input id="radio_b18" type="radio" name="Answer18"> Answer 2</h4>
+        <h4 class="incorrectA" id="c18" onclick="ans_c(this.id)"><input id="radio_c18" type="radio" name="Answer18"> Answer 3</h4>
+        <h4 class="incorrectA" id="d18" onclick="ans_d(this.id)"><input id="radio_d18" type="radio" name="Answer18"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q19" class="slide">
+      <h3>A sample question....19?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a19" onclick="ans_a(this.id)"><input id="radio_a19" type="radio" name="Answer19"> Answer 1</h4>
+        <h4 class="incorrectA" id="b19" onclick="ans_b(this.id)"><input id="radio_b19" type="radio" name="Answer19"> Answer 2</h4>
+        <h4 class="incorrectA" id="c19" onclick="ans_c(this.id)"><input id="radio_c19" type="radio" name="Answer19"> Answer 3</h4>
+        <h4 class="incorrectA" id="d19" onclick="ans_d(this.id)"><input id="radio_d19" type="radio" name="Answer19"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="q20" class="slide">
+      <h3>A sample question....20?</h3>
+      <div class="Answer">
+        <h4 class="correctA" id="a20" onclick="ans_a(this.id)"><input id="radio_a20" type="radio" name="Answer20"> Answer 1</h4>
+        <h4 class="incorrectA" id="b20" onclick="ans_b(this.id)"><input id="radio_b20" type="radio" name="Answer20"> Answer 2</h4>
+        <h4 class="incorrectA" id="c20" onclick="ans_c(this.id)"><input id="radio_c20" type="radio" name="Answer20"> Answer 3</h4>
+        <h4 class="incorrectA" id="d20" onclick="ans_d(this.id)"><input id="radio_d20" type="radio" name="Answer20"> Answer 4</h4>
+      </div>
+    </div>
+    <div id="correctA">
+      <h3>Correct answer</h3>
+      <h4><input type="radio" checked> Answer 1</h4>
+    </div>
+    </div>
+    <div class="dir">
+      <img id="left_arrow" src="left.svg" alt="left" onclick="previus()">
+      <img id="right_arrow" src="right.svg" alt="right" onclick="next()"><br><br><br><br>
+      <input id="Finish_quiz" type="button" onclick="result()" value="Finish Quiz">
+    </div>
+  </div>
+  </body>
+</html>
